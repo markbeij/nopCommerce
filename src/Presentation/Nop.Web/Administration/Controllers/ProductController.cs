@@ -92,6 +92,7 @@ namespace Nop.Admin.Controllers
         private readonly ISettingService _settingService;
         private readonly TaxSettings _taxSettings;
         private readonly VendorSettings _vendorSettings;
+        private readonly CatalogSettings _catalogSettings;
 
         #endregion
 
@@ -139,7 +140,8 @@ namespace Nop.Admin.Controllers
             IDownloadService downloadService,
             ISettingService settingService,
             TaxSettings taxSettings,
-            VendorSettings vendorSettings)
+            VendorSettings vendorSettings,
+            CatalogSettings catalogSettings)
         {
             this._productService = productService;
             this._productTemplateService = productTemplateService;
@@ -184,6 +186,7 @@ namespace Nop.Admin.Controllers
             this._settingService = settingService;
             this._taxSettings = taxSettings;
             this._vendorSettings = vendorSettings;
+            this._catalogSettings = catalogSettings;
         }
 
         #endregion 
@@ -882,6 +885,7 @@ namespace Nop.Admin.Controllers
             var model = new ProductListModel();
             //a vendor should have access only to his products
             model.IsLoggedInAsVendor = _workContext.CurrentVendor != null;
+            model.VendorsCanImportProduct = _catalogSettings.VendorsCanImportProduct;
 
             //categories
             model.AvailableCategories.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
@@ -2743,9 +2747,9 @@ namespace Nop.Admin.Controllers
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
                 return AccessDeniedView();
-
-            //a vendor cannot import products
-            if (_workContext.CurrentVendor != null)
+            
+            if (_workContext.CurrentVendor != null && !_catalogSettings.VendorsCanImportProduct)
+                //a vendor can not import products
                 return AccessDeniedView();
 
             try

@@ -355,6 +355,11 @@ namespace Nop.Core.Domain.Catalog
         public bool ExportImportProductAttributes { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether vendors can import products
+        /// </summary>
+        public bool VendorsCanImportProduct { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether need create dropdown list for export
         /// </summary>
         public bool ExportImportUseDropdownlistsForAssociatedEntities { get; set; }

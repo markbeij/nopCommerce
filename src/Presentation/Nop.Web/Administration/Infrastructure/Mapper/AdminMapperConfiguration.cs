@@ -846,7 +846,8 @@ namespace Nop.Admin.Infrastructure.Mapper
                     .ForMember(dest => dest.CustomProperties, mo => mo.Ignore())
                     .ForMember(dest => dest.ShowProductReviewsOnAccountPage_OverrideForStore, mo => mo.Ignore())
                     .ForMember(dest => dest.ProductReviewsPageSizeOnAccountPage_OverrideForStore, mo => mo.Ignore())
-                    .ForMember(dest => dest.ExportImportProductAttributes_OverrideForStore, mo => mo.Ignore());
+                    .ForMember(dest => dest.ExportImportProductAttributes_OverrideForStore, mo => mo.Ignore())
+                    .ForMember(dest => dest.VendorsCanImportProduct_OverrideForStore, mo => mo.Ignore());
                 cfg.CreateMap<CatalogSettingsModel, CatalogSettings>()
                     .ForMember(dest => dest.PublishBackProductWhenCancellingOrders, mo => mo.Ignore())
                     .ForMember(dest => dest.DefaultViewMode, mo => mo.Ignore())

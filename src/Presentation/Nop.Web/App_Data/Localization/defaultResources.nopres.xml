@@ -4968,6 +4968,12 @@
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ExportImportProductAttributes.Hint">
     <Value>Check if products should be exported/imported with product attributes.</Value>
   </LocaleResource>
+   <LocaleResource Name="Admin.Configuration.Settings.Catalog.VendorsCanImportProduct">
+    <Value>Vendors can import products</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.VendorsCanImportProduct.Hint">
+    <Value>Check if vendors can import products</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.IgnoreDiscounts">
     <Value>Ignore discounts (sitewide)</Value>
   </LocaleResource>

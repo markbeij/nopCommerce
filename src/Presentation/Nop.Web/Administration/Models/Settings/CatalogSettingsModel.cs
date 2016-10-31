@@ -226,6 +226,10 @@ namespace Nop.Admin.Models.Settings
         public bool ExportImportProductAttributes { get; set; }
         public bool ExportImportProductAttributes_OverrideForStore { get; set; }
 
+        [NopResourceDisplayName("Admin.Configuration.Settings.Catalog.VendorsCanImportProduct")]
+        public bool VendorsCanImportProduct { get; set; }
+        public bool VendorsCanImportProduct_OverrideForStore { get; set; }
+
         [NopResourceDisplayName("Admin.Configuration.Settings.Catalog.IgnoreDiscounts")]
         public bool IgnoreDiscounts { get; set; }
         [NopResourceDisplayName("Admin.Configuration.Settings.Catalog.IgnoreFeaturedProducts")]

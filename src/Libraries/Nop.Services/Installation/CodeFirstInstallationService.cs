@@ -5835,6 +5835,7 @@ namespace Nop.Services.Installation
                 ShowProductReviewsTabOnAccountPage = true,
                 ProductReviewsPageSizeOnAccountPage = 10,
                 ExportImportProductAttributes = true,
+                VendorsCanImportProduct = false,
                 ExportImportUseDropdownlistsForAssociatedEntities = true
             });
 
