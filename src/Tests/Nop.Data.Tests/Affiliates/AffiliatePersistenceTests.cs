@@ -13,7 +13,6 @@ namespace Nop.Data.Tests.Affiliates
         [Test]
         public void Can_save_and_load_affiliate()
         {
-            var s = string.Empty;
             var affiliate = new Affiliate
             {
                 Deleted = true,
